@@ -13,4 +13,4 @@ echo "Removing existing container $container_name..."
 docker rm $container_name
 
 echo "Starting new container $container_name..."
-docker run -d --name $container_name -v $host_volume_mount_path:$container_volume_mount_path -e MYSQL_ROOT_PASSWORD=$mysql_root_password -p $host_mysql_port:$container_mysql_port mysql:$mysql_version
+docker run -d --name $container_name -v "$host_volume_mount_path:$container_volume_mount_path" -e MYSQL_ROOT_PASSWORD=$mysql_root_password -p $host_mysql_port:$container_mysql_port mysql:$mysql_version
